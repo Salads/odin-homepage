@@ -1,0 +1,156 @@
+:root {
+	--light-blue: #0891B2;
+	--muted-red: #9E1C1C;
+	--muted-purple: #7C75CA;
+	--muted-pink: #C363B4;
+	--muted-orange: #D88F39;
+	--muted-green: #5E8F4D;
+	
+	--background-color: white;
+	--accent-color: var(--light-blue);
+	--text-color-overlay: white;
+	--text-color-header: black;
+	--text-color-description: gray;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.link-row {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	justify-content: flex-end;
+	margin: 16px;
+}
+
+.about-section {
+	width: 100%;
+	padding: 32px;
+
+	display: flex;
+	justify-content: center;
+	padding: 30px 24px;
+
+	&::before {
+		background-color: var(--accent-color);
+
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+
+		width: 100%;
+		height: 450px;
+
+		clip-path: polygon(
+			0% 0%, 100% 0%, 
+			100% 50%, 0% 100%
+		);
+	}
+}
+
+.about-container {
+	position: relative;
+	width: 100%;
+	max-width: 1000px;
+}
+
+.about-name {
+	position: absolute;
+	top: -10px;
+	left: 180px;
+	z-index: 2;
+}
+
+.about-content {
+	margin-top: 80px;
+	padding: 20px 30px 30px;
+	background-color: var(--background-color);
+	box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+	min-height: 300px;
+
+	position: relative;
+
+	& > .link-row {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.about-content > h2 {
+	text-align: center;
+}
+
+.about-portrait {
+	float: left;
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+	
+	margin-top: -130px;
+	margin-left: -90px;
+	margin-right: 24px;
+	margin-bottom: 16px;
+
+	position: relative;
+	z-index: 1;
+}
+
+.about-content-text {
+	& > h2 {
+		text-align: center;
+		clear: both;
+	}
+}
+
+.about-card h2 {
+	text-align: center;
+}
+
+.about-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.project-icon {
+	width: 32px;
+	height: 32px;
+}
+
+.footer-icon {
+	width: 64px;
+	height: 64px;
+}
+
+.footer-portrait {
+	height: 250px;
+	width: auto;
+}
+
+@media (min-width: 500px) {
+	
+}
+
+@media (min-width: 730px) {
+	.about-portrait {
+		margin: 0 16px 0 0;
+	}
+
+	.about-name {
+		top: 300px;
+		left: 50px;
+	}
+
+	.about-content {
+		padding: 0;
+
+		& p,
+		& h2 {
+			padding-top: 20px;
+		}
+	}
+}
