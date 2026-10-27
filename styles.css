@@ -13,9 +13,14 @@
 	--text-color-description: gray;
 }
 
+html {
+	min-width: 320px;
+}
+
 body {
 	margin: 0;
 	padding: 0;
+	min-width: 320px;
 }
 
 /*
@@ -54,6 +59,8 @@ p {
 
 	position: relative;
 	z-index: 0;
+
+	margin-top: 64px;
 }
 
 .about-portrait-wrapper {
@@ -113,7 +120,7 @@ a:hover {
 	border-bottom: 2px solid black;
 }
 
-@media (min-width: 500px) and (max-width: 1500px) {
+@media (min-width: 600px) and (max-width: 900px) {
 
 	.about-container {
 		margin-top: 64px;
@@ -163,6 +170,44 @@ a:hover {
 	}
 }
 
-@media (min-width: 1501px) {
+@media (min-width: 901px) {
+
+	.about-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.about-portrait-wrapper {
+		margin: 0;
+	}
+
+	.about-portrait {
+		--size: 250px;
+		width: var(--size);
+		height: var(--size);
+		box-shadow: 1px 0 5px rgb(68, 68, 68);
+	}
+
+	.about-content {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 75%;
+		max-width: 1000px;
+		margin-top: 64px;
+	}
+
+	.about-text-container {
+		display: flex;
+		flex-direction: column;
+		& > .link-row {
+			align-self: flex-end;
+			margin: 16px;
+		}
+	}
+
+	.about-text-container {
+		box-shadow: 0 0 5px gray;
+	}
 
 }
