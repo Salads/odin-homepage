@@ -53,13 +53,14 @@ p {
 	align-items: center;
 
 	position: relative;
-	z-index: 1;
+	z-index: 0;
 }
 
 .about-portrait-wrapper {
 	position: relative;
 	display: inline-block;
 	margin-bottom: 16px;
+	z-index: 1;
 }
 
 .about-portrait {
@@ -87,6 +88,10 @@ p {
 		text-align: center;
 		margin-bottom: 4px;
 	}
+
+	& > .link-row {
+		justify-content: center;
+	}
 }
 
 .about-text {
@@ -106,4 +111,58 @@ p {
 
 a:hover {
 	border-bottom: 2px solid black;
+}
+
+@media (min-width: 500px) and (max-width: 1500px) {
+
+	.about-container {
+		margin-top: 64px;
+	}
+
+	.about-content {
+		display: block;
+		position: relative;
+		width: 75%;
+		justify-self: center;
+		margin-top: 96px;
+	}
+
+	.about-text-container {
+		position: relative;
+		padding: 16px;
+		box-shadow: 0 0 5px gray;
+
+		& > h2 {
+			margin: 0 0 16px 0;
+		}
+
+		& > .link-row {
+			justify-content: flex-end;
+		}
+	}
+
+	.about-portrait-wrapper { 
+		float: left;
+		position: relative;
+		margin: 0 16px 16px 0;
+	}
+
+	.about-portrait {
+		--size: 175px;
+		width: var(--size);
+		height: var(--size);
+		margin-top: -64px;
+		margin-left: -64px;
+	}
+
+	.about-name {
+		position: absolute;
+		left: 125px;
+		top: -48px;
+		white-space: nowrap;
+	}
+}
+
+@media (min-width: 1501px) {
+
 }
