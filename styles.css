@@ -81,6 +81,7 @@ p {
 }
 
 .about-name {
+	color: var(--text-color-overlay);
 	position: absolute;
 	z-index: 2;
 
