@@ -185,6 +185,84 @@ a:hover {
 	height: 24px;
 }
 
+.footer {
+	background-color: var(--accent-color);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 32px;
+
+	margin-top: 64px;
+	padding: 16px 0;
+
+	& > div {
+		width: 85%;
+	}
+
+	& h2 {
+		color: var(--text-color-overlay);
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
+
+	& p {
+		color: var(--text-color-overlay);
+		padding: 0;
+		margin: 0;
+		width: fit-content;
+	}
+
+	& .link-row {
+		align-self: center;
+		gap: 32px;
+	}
+}
+
+.footer-contact {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.footer-text-phone {
+	position: relative;
+	left: 24px;
+
+	&::before {
+		content: "";
+		background-image: url(assets/phone.svg);
+		width: 16px;
+		height: 16px;
+		left: -24px;
+		position: absolute;
+	}
+}
+
+.footer-text-email {
+	position: relative;
+	left: 24px;
+
+	&::before {
+		content: "";
+		background-image: url(assets/email-outline.svg);
+		width: 16px;
+		height: 16px;
+		left: -24px;
+		top: 2px;
+		position: absolute;
+	}
+}
+
+.footer-portrait {
+	width: 350px;
+	height: 250px;
+	object-fit: cover;
+	overflow-clip-margin: none;
+}
+
 @media (min-width: 600px) and (max-width: 900px) {
 
 	.about-container {
@@ -237,6 +315,20 @@ a:hover {
 	.project-grid {
 		grid-template-columns: repeat(2, minmax(250px, 1fr));
 	}
+
+	.footer {
+		flex-direction: row;
+	}
+
+	.footer-contact {
+		margin-left: 32px;
+	}
+
+	.footer-portrait {
+		width: 40%;
+		aspect-ratio: 1 / 1;
+		margin-right: 32px;
+	}
 }
 
 @media (min-width: 901px) {
@@ -281,6 +373,35 @@ a:hover {
 
 	.project-grid {
 		grid-template-columns: repeat(3, minmax(250px, 1fr));
+	}
+
+	.footer {
+		flex-direction: row;
+		justify-content: center;
+		gap: 16px;
+	}
+
+	.footer-header {
+		width: fit-content;
+	}
+
+	.footer-contact {
+		margin-left: 32px;
+		max-width: 30%;
+
+		& > div {
+			width: fit-content;
+		}
+
+		& .link-row {
+			align-self: flex-start;
+		}
+	}
+
+	.footer-portrait {
+		width: 300px;
+		aspect-ratio: 1;
+		margin-right: 32px;
 	}
 
 }
